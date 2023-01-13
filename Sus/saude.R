@@ -1,0 +1,6 @@
+#devtools::install_github("rfsaldanha/microdatasus")
+library(microdatasus)
+dados <- fetch_datasus(year_start = 2019, month_start = 1, year_end = 2019, month_end = 12, uf = "GO", information_system = "CNES-LT")
+#dados <- process_sim(dados, municipality_data = FALSE)
+dados <- process_sim(dados, municipality_data = TRUE)
+write.csv(dados, "C:\\Users\\stone\\OneDrive\\Documentos\\Testes provas\\dados_2019.csv", row.names=TRUE)
